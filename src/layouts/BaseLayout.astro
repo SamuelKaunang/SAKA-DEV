@@ -51,7 +51,7 @@ const props = Astro.props;
         --color-background-light: #f8f6f6;
         --font-display: "Space Grotesk", sans-serif;
       }
-      html { scroll-behavior: smooth; }
+      html { }
       body {
         background-color: var(--color-background-light);
         font-family: var(--font-display);
@@ -87,13 +87,35 @@ const props = Astro.props;
   </head>
   <body class="bg-background-light dark:bg-background-dark font-display overflow-x-hidden selection:bg-primary selection:text-white">
     <slot />
+    
+    <script>
+      import { languageStore } from '../stores/languageStore';
+      import { translations } from '../i18n/translations';
+
+      // Subscribe to language changes
+      languageStore.subscribe(lang => {
+        const t = translations[lang];
+        if (!t) return;
+
+        document.querySelectorAll('[data-i18n]').forEach(el => {
+          const key = el.getAttribute('data-i18n');
+          if (t[key]) {
+             // Check if translation contains HTML (simple check)
+             if (t[key].includes('<')) {
+                el.innerHTML = t[key];
+             } else {
+                el.textContent = t[key];
+             }
+          }
+        });
+      });
+    </script>
   </body>
 </html>
 
 <style is:global>
   /* Ensure smooth page transitions */
   html {
-    scroll-behavior: smooth;
   }
   
   /* Focus visible styles for accessibility */

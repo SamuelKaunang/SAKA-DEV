@@ -34,7 +34,6 @@
 }
 
 html {
-  scroll-behavior: smooth;
 }
 
 body {
@@ -181,6 +180,7 @@ body {
 /* Marquee Animation - seamless */
 .marquee-content {
   animation: marquee-scroll 30s linear infinite;
+  will-change: transform;
 }
 
 @keyframes marquee-scroll {
@@ -195,6 +195,7 @@ body {
 /* Legacy scroll-text class */
 .scroll-text {
   animation: scroll 20s linear infinite;
+  will-change: transform;
 }
 
 @keyframes scroll {
@@ -284,6 +285,7 @@ body {
 
 .animate-float-sticker {
   animation: float-sticker 3s ease-in-out infinite;
+  will-change: transform;
 }
 
 /* Hide scrollbar for marquee */

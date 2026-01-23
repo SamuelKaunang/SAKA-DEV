@@ -36,8 +36,8 @@ const {
   twitterCreator,
 } = Astro.props;
 
-const siteName = 'Portfolio Comic Brutalism';
-const fullTitle = `${title} | ${siteName}`;
+const siteName = 'Saka.Dev - Jasa Pembuatan Website UMKM';
+const fullTitle = title;
 const ogImage = image.startsWith('http') ? image : new URL(image, Astro.site).href;
 const robots = `${noindex ? 'noindex' : 'index'}, ${nofollow ? 'nofollow' : 'follow'}`;
 ---
@@ -51,6 +51,12 @@ const robots = `${noindex ? 'noindex' : 'index'}, ${nofollow ? 'nofollow' : 'fol
 {author && <meta name="author" content={author} />}
 <link rel="canonical" href={canonicalUrl} />
 
+<!-- Geo Tags for Indonesia -->
+<meta name="geo.region" content="ID" />
+<meta name="geo.placename" content="Indonesia" />
+<meta name="language" content="Indonesian" />
+<meta name="revisit-after" content="7 days" />
+
 <!-- Open Graph / Facebook -->
 <meta property="og:type" content={type} />
 <meta property="og:url" content={canonicalUrl} />
@@ -59,7 +65,7 @@ const robots = `${noindex ? 'noindex' : 'index'}, ${nofollow ? 'nofollow' : 'fol
 <meta property="og:image" content={ogImage} />
 <meta property="og:image:alt" content={description} />
 <meta property="og:site_name" content={siteName} />
-<meta property="og:locale" content="en_US" />
+<meta property="og:locale" content="id_ID" />
 
 {type === 'article' && publishedTime && (
   <meta property="article:published_time" content={publishedTime} />
@@ -84,38 +90,65 @@ const robots = `${noindex ? 'noindex' : 'index'}, ${nofollow ? 'nofollow' : 'fol
 <meta name="theme-color" content="#ea2a33" />
 <meta name="color-scheme" content="light" />
 
-<!-- JSON-LD Structured Data -->
+<!-- JSON-LD Structured Data - LocalBusiness + Service -->
 <script type="application/ld+json" set:html={JSON.stringify({
   "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "Samuel Kaunang Web Development",
-  "alternateName": "Saka.Dev",
-  "description": "Jasa Pembuatan Website Profesional dan Aplikasi Bisnis untuk UMKM Indonesia. Spesialis Scalable Backend & Modern Frontend.",
-  "priceRange": "Rp$$",
+  "@type": "LocalBusiness",
+  "name": "Saka.Dev - Jasa Pembuatan Website",
+  "alternateName": "Saka Dev",
+  "description": "Jasa pembuatan website profesional untuk UMKM Indonesia. Spesialis company profile, toko online, dan sistem booking. Harga mulai Rp 1.5 Juta dengan konsultasi gratis.",
+  "priceRange": "Rp 1.500.000 - Rp 10.000.000",
   "url": canonicalUrl,
   "image": ogImage,
-  "jobTitle": "Full-stack Developer",
-  "knowsAbout": [
-    "Backend Development",
-    "System Architecture", 
-    "Spring Boot",
-    "React.js",
-    "Next.js",
-    "Java",
-    "TypeScript",
-    "Product Management",
-    "Digital Business Strategy"
-  ],
+  "telephone": "+6282190599569",
+  "email": "samuelymkaunang@gmail.com",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "ID",
+    "addressLocality": "Indonesia"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "addressCountry": "ID"
+  },
+  "openingHours": "Mo-Sa 09:00-21:00",
+  "paymentAccepted": "Cash, Bank Transfer, QRIS",
+  "currenciesAccepted": "IDR",
+  "areaServed": {
+    "@type": "Country",
+    "name": "Indonesia"
+  },
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Paket Jasa Pembuatan Website",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "name": "Paket Starter Satset - Company Profile",
+        "description": "Website company profile profesional dengan 5 halaman, WhatsApp floating, SEO dasar, Google Maps",
+        "price": "1500000",
+        "priceCurrency": "IDR"
+      },
+      {
+        "@type": "Offer", 
+        "name": "Paket Business System - E-Commerce",
+        "description": "Toko online lengkap dengan payment gateway QRIS/VA, integrasi ongkir RajaOngkir, dashboard admin",
+        "price": "4500000",
+        "priceCurrency": "IDR"
+      },
+      {
+        "@type": "Offer",
+        "name": "Paket Custom Beast - Enterprise",
+        "description": "Sistem custom full architecture untuk kebutuhan enterprise dan SaaS",
+        "price": "10000000",
+        "priceCurrency": "IDR"
+      }
+    ]
+  },
   "sameAs": [
     "https://github.com/SamuelKaunang",
     "https://www.linkedin.com/in/samuel-kaunang-948246286",
     "https://www.instagram.com/samuel.knng"
-  ],
-  "email": "samuelymkaunang@gmail.com",
-  "telephone": "+6282190599569",
-  "address": {
-    "@type": "PostalAddress",
-    "addressCountry": "ID"
-  }
+  ]
 })} />
 

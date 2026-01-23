@@ -8,9 +8,25 @@ import PricingSection from '../components/PricingSection.astro';
 ---
 
 <BaseLayout 
-  title="Jasa Pembuatan Website Profesional | Samuel Kaunang | Web Developer Indonesia"
-  description="Solusi Digital untuk UMKM & Perusahaan Indonesia. Jasa pembuatan website profesional, aplikasi bisnis, dan sistem manajemen yang scalable. Hubungi untuk konsultasi gratis."
-  keywords={['Jasa Pembuatan Website', 'Web Developer Indonesia', 'Digitalisasi UMKM', 'Jasa Bikin Web Profesional', 'Software House Jakarta', 'Freelance Programmer Indonesia', 'Aplikasi Bisnis Custom', 'Sistem Manajemen Perusahaan', 'Full-Stack Developer Indonesia']}
+  title="Jasa Pembuatan Website UMKM Murah & Profesional 2026 | Saka.Dev | Freelancer Indonesia"
+  description="Butuh website untuk bisnis UMKM? Jasa pembuatan website profesional mulai Rp 1.5 Juta! Company profile, toko online, sistem booking. Konsultasi GRATIS. Developer berpengalaman, hasil cepat 3-7 hari."
+  keywords={[
+    'Jasa Pembuatan Website Murah',
+    'Jasa Bikin Website UMKM',
+    'Web Developer Freelance Indonesia',
+    'Jasa Website Company Profile',
+    'Bikin Toko Online Murah',
+    'Jasa Pembuatan Website Profesional',
+    'Website UMKM Indonesia',
+    'Freelancer Web Developer',
+    'Jasa Website Murah Jakarta',
+    'Jasa Pembuatan Landing Page',
+    'Website Bisnis Online',
+    'Jasa Web Design Indonesia',
+    'Harga Jasa Pembuatan Website',
+    'Jasa Bikin Web Toko Online',
+    'Developer Website Profesional'
+  ]}
 >
   <!-- Top Navigation -->
   <nav class="fixed top-0 left-0 right-0 z-40 bg-white border-b-4 border-ink px-6 py-4 overflow-hidden">
@@ -45,7 +61,7 @@ import PricingSection from '../components/PricingSection.astro';
        <!-- Right Decor: Status Badge -->
       <div class="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 items-center gap-4">
           <div class="rotate-2 hover:rotate-0 transition-transform">
-             <a href="#pricing" class="bg-black text-white text-xs font-bold px-3 py-1 border-2 border-white shadow-[3px_3px_0px_0px_#ea2a33] hover:bg-gray-900 transition-colors">
+             <a href="#pricing" class="bg-black text-white text-xs font-bold px-3 py-1 border-2 border-white shadow-[3px_3px_0px_0px_#ea2a33] hover:bg-gray-900 transition-colors" data-i18n="nav.available">
               AVAILABLE FOR HIRE
              </a>
           </div>
@@ -54,7 +70,7 @@ import PricingSection from '../components/PricingSection.astro';
     </div>
   </nav>
 
-  <main class="pt-24 flex flex-col items-center w-full bg-pattern overflow-x-hidden relative">
+  <main class="pt-24 flex flex-col items-center w-full bg-pattern relative">
     
     <!-- Halftone Texture Overlay -->
     <div class="absolute inset-0 bg-halftone pointer-events-none z-0"></div>
@@ -79,22 +95,22 @@ import PricingSection from '../components/PricingSection.astro';
         <div class="flex-1 flex flex-col gap-6">
           <!-- Tagline Badge -->
           <div class="inline-block bg-primary border-2 border-ink px-3 py-1 shadow-hard-sm w-fit -rotate-2 hover:rotate-2 transition-transform duration-200 hover:scale-110 cursor-default">
-            <span class="text-white font-bold uppercase tracking-widest text-sm animate-pulse">Logic • Strategy • Scale</span>
+            <span class="text-white font-bold uppercase tracking-widest text-sm animate-pulse" data-i18n="hero.tagline">Logic • Strategy • Scale</span>
           </div>
           
           <!-- Main Heading with colored accents -->
           <h1 class="text-6xl md:text-8xl font-black leading-[0.9] tracking-tighter uppercase text-black drop-shadow-sm animate-slam">
             <span class="relative inline-block hover:skew-x-12 transition-transform" data-hacker-text>
-              Building
+              <span data-i18n="hero.building">Building</span>
               <!-- Underline accent -->
               <span class="absolute -bottom-1 left-0 w-full h-3" style="background-color: #ea2a33; opacity: 0.4;"></span>
             </span><br/>
-            <span class="italic inline-block hover:-rotate-3 transition-transform" style="color: #ea2a33; text-shadow: 3px 3px 0px rgba(0,0,0,0.15);" data-hacker-text>Digital</span><br/>
-            <span class="inline-block hover:translate-x-2 transition-transform" data-hacker-text><span style="color: #ea2a33;">C</span>haos<span style="color: #ea2a33;">.</span></span>
+            <span class="italic inline-block hover:-rotate-3 transition-transform" style="color: #ea2a33; text-shadow: 3px 3px 0px rgba(0,0,0,0.15);" data-hacker-text data-i18n="hero.digital">Digital</span><br/>
+            <span class="inline-block hover:translate-x-2 transition-transform" data-hacker-text data-i18n="hero.chaos"><span style="color: #ea2a33;">C</span>haos<span style="color: #ea2a33;">.</span></span>
           </h1>
           
           <!-- Description with highlighted words -->
-          <p class="text-xl md:text-2xl font-medium max-w-lg border-l-4 pl-4 bg-white/80 backdrop-blur-sm py-2 text-black animate-text-reveal" style="border-color: #ea2a33; animation-delay: 0.5s;">
+          <p class="text-xl md:text-2xl font-medium max-w-lg border-l-4 pl-4 bg-white/80 backdrop-blur-sm py-2 text-black animate-text-reveal" style="border-color: #ea2a33; animation-delay: 0.5s;" data-i18n="hero.description">
              <span class="font-bold inline-block hover:text-primary transition-colors cursor-default" style="color: #ea2a33;">Backend-heavy</span> Full-stack Developer focusing on 
             <span class="px-1 font-semibold bg-black text-white hover:bg-primary hover:scale-110 inline-block transition-all cursor-crosshair" style="background-color: #000;">system scalability</span> and 
             <span class="font-bold bg-comic-yellow text-black px-1 hover:rotate-3 inline-block transition-transform cursor-help" style="color: #000;">business profitability</span>.
@@ -109,14 +125,14 @@ import PricingSection from '../components/PricingSection.astro';
           <!-- Buttons -->
           <div class="flex flex-wrap gap-4 mt-2 animate-text-reveal" style="animation-delay: 0.8s;">
             <a href="#selected-works" class="neo-brutal-btn hover-glitch group relative h-14 px-8 text-white font-bold text-lg border-4 border-ink shadow-hard transition-all flex items-center gap-2" style="background-color: #ea2a33;">
-              <span>EXPLORE PROJECTS</span>
+              <span data-i18n="hero.btn.projects">EXPLORE PROJECTS</span>
               <span class="material-symbols-outlined group-hover:translate-x-1 transition-transform">arrow_forward</span>
             </a>
             <button class="about-me-btn neo-brutal-btn hover-shake group relative h-14 px-8 bg-white text-black font-bold text-lg border-4 border-black shadow-hard transition-all flex items-center gap-2">
-              <span>ABOUT ME</span>
+              <span data-i18n="hero.btn.about">ABOUT ME</span>
             </button>
             <a href="#pricing" class="neo-brutal-btn hover-glitch group relative h-14 px-8 bg-[#00E5FF] text-black font-bold text-lg border-4 border-black shadow-hard transition-all flex items-center gap-2">
-               <span>OUR SERVICES</span>
+               <span data-i18n="hero.btn.services">OUR SERVICES</span>
                <span class="material-symbols-outlined font-black group-hover:rotate-180 transition-transform">sell</span>
             </a>
           </div>
@@ -797,7 +813,7 @@ import PricingSection from '../components/PricingSection.astro';
         <!-- Brand -->
         <div>
           <h3 class="text-2xl font-black uppercase mb-3">Saka<span class="text-primary">.Dev</span></h3>
-          <p class="text-gray-600 font-medium text-sm mb-4 max-w-xs">
+          <p class="text-gray-600 font-medium text-sm mb-4 max-w-xs" data-i18n="footer.brand_desc">
             Crafting digital chaos with precision engineering. Focused on scalable backends and brutalist frontends.
           </p>
           <div class="flex flex-wrap gap-1">
@@ -934,33 +950,42 @@ import PricingSection from '../components/PricingSection.astro';
 
     });
 
-    /* --- CTA 3D TILT EFFECT --- */
+    /* --- CTA 3D TILT EFFECT (OPTIMIZED) --- */
     const ctaSection = document.getElementById('cta-section');
     const ctaBubble = document.getElementById('cta-bubble');
     const ctaBg = document.getElementById('cta-bg');
 
     if (ctaSection && ctaBubble && ctaBg) {
+        let ticking = false;
+
         ctaSection.addEventListener('mousemove', (e) => {
-            const rect = ctaSection.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            // Calculate center
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            
-            // Calculate rotation (max 10 degrees)
-            const rotateX = ((y - centerY) / centerY) * -10;
-            const rotateY = ((x - centerX) / centerX) * 10;
-            
-            // Apply rotation to bubble
-            ctaBubble.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
-            
-            // Move background in opposite direction (parallax)
-            const moveX = ((x - centerX) / centerX) * -20;
-            const moveY = ((y - centerY) / centerY) * -20;
-            
-            ctaBg.style.transform = `translate(calc(-50% + ${moveX}px), calc(-50% + ${moveY}px)) scale(1.1)`;
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const rect = ctaSection.getBoundingClientRect();
+                    const x = e.clientX - rect.left;
+                    const y = e.clientY - rect.top;
+                    
+                    // Calculate center
+                    const centerX = rect.width / 2;
+                    const centerY = rect.height / 2;
+                    
+                    // Calculate rotation (max 10 degrees)
+                    const rotateX = ((y - centerY) / centerY) * -10;
+                    const rotateY = ((x - centerX) / centerX) * 10;
+                    
+                    // Apply rotation to bubble
+                    ctaBubble.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+                    
+                    // Move background in opposite direction (parallax)
+                    const moveX = ((x - centerX) / centerX) * -20;
+                    const moveY = ((y - centerY) / centerY) * -20;
+                    
+                    ctaBg.style.transform = `translate(calc(-50% + ${moveX}px), calc(-50% + ${moveY}px)) scale(1.1)`;
+                    
+                    ticking = false;
+                });
+                ticking = true;
+            }
         });
         
         // Reset on mouse leave
