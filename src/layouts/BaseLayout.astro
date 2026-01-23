@@ -1,0 +1,104 @@
+---
+/**
+ * BaseLayout Component
+ * Main layout wrapper with SEO support and global styles
+ */
+import '../styles/global.css';
+import SiteMeta from '../components/SiteMeta.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  image?: string;
+  canonicalUrl?: string;
+  type?: 'website' | 'article' | 'profile';
+  author?: string;
+  publishedTime?: string;
+  modifiedTime?: string;
+  keywords?: string[];
+  noindex?: boolean;
+  nofollow?: boolean;
+  twitterCard?: 'summary' | 'summary_large_image' | 'player' | 'app';
+  twitterCreator?: string;
+}
+
+const props = Astro.props;
+---
+
+<!doctype html>
+<html class="light" lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    
+    <SiteMeta {...props} />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;700;900&display=swap" rel="stylesheet" />
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    
+    <!-- Critical CSS (Above-the-fold) -->
+    <style>
+      /* Critical styles for immediate render */
+      :root {
+        --color-primary: #ea2a33;
+        --color-background-light: #f8f6f6;
+        --font-display: "Space Grotesk", sans-serif;
+      }
+      html { scroll-behavior: smooth; }
+      body {
+        background-color: var(--color-background-light);
+        font-family: var(--font-display);
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+      }
+      /* Navigation skeleton */
+      nav { 
+        position: fixed; 
+        top: 0; 
+        left: 0; 
+        right: 0; 
+        z-index: 50; 
+        background: white;
+        border-bottom: 4px solid black;
+        padding: 1rem 1.5rem;
+      }
+      /* Hero section skeleton */
+      .animate-slam {
+        animation: slam-in 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+      }
+      @keyframes slam-in {
+        0% { transform: scale(1.5); opacity: 0; }
+        60% { transform: scale(0.9); opacity: 1; }
+        100% { transform: scale(1); opacity: 1; }
+      }
+      /* Prevent FOUC for primary color */
+      .text-primary { color: var(--color-primary); }
+      .bg-primary { background-color: var(--color-primary); }
+    </style>
+  </head>
+  <body class="bg-background-light dark:bg-background-dark font-display overflow-x-hidden selection:bg-primary selection:text-white">
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  /* Ensure smooth page transitions */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Focus visible styles for accessibility */
+  :focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
+  }
+</style>

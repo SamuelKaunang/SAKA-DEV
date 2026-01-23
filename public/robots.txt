@@ -1,0 +1,30 @@
+# Sitemap
+# Auto-generated sitemap for Portfolio
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://saka.dev/sitemap-index.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
+
+# Disallow admin/private paths (none for portfolio)
+# Disallow: /admin/
+
+# Allow all search engine bots
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /

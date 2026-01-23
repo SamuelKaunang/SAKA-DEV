@@ -1,0 +1,128 @@
+/* ============================================
+   CLICK POP (COMIC ONOMATOPOEIA) EFFECT
+   ============================================ */
+
+/* The word container - Base Styles */
+.click-pop {
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 2.5rem; /* Larger base size */
+    color: #fff;
+    -webkit-text-stroke: 2px #000;
+    animation: pop-animation 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    text-align: center;
+    line-height: 1;
+    
+    /* Default Box Styling */
+    background: #FFD700;
+    padding: 1rem 1.5rem;
+    border: 3px solid #000;
+    box-shadow: 4px 4px 0px #000;
+    
+    /* Center transform handled in keyframes to include rotation */
+    transform: translate(-50%, -50%);
+  }
+  
+  /* --- SHAPE VARIATIONS --- */
+  
+  /* 1. The "Burst" / Explosion (POW! BAM!) */
+  .click-pop.shape-burst {
+    background: #EA2A33; /* Red */
+    color: #FFF;
+    border: none;
+    box-shadow: none; /* clip-path cuts shadow, so we use drop-shadow filter if needed, or just plain flat */
+    padding: 2.5rem;
+    clip-path: polygon(
+        20% 0%, 30% 20%, 50% 0%, 60% 20%, 80% 0%,
+        80% 20%, 100% 20%, 90% 40%, 100% 60%, 
+        80% 60%, 90% 80%, 60% 80%, 50% 100%, 
+        40% 80%, 20% 80%, 30% 60%, 0% 60%, 
+        10% 40%, 0% 20%, 20% 20%
+    );
+    /* For clip-path shapes, we can approximate a border using a pseudo-element if we really wanted, but flat is fine for comic style */
+    filter: drop-shadow(4px 4px 0px #000);
+  }
+  
+  /* 2. The "Cloud" / Thought Bubble */
+  .click-pop.shape-cloud {
+      background: #FFF;
+      color: #000;
+      -webkit-text-stroke: 0px;
+      border: none;
+      box-shadow: none;
+      padding: 2rem 3rem;
+      border-radius: 50%; /* Fallback */
+      clip-path: ellipse(50% 40% at 50% 50%); /* Simple ellipse for now, or more complex poly */
+      /* Let's use a "lumpy" polygon for a better cloud feel */
+      clip-path: inset(0% round 30% 30% 30% 30%); /* Rounded rect */
+      border: 4px solid #000; /* Border radius works with this */
+      filter: drop-shadow(4px 4px 0px #000);
+  }
+  
+  /* 3. The "Zap" / Jagged (ZAP!) */
+  .click-pop.shape-zap {
+     background: #FFD700; /* Yellow */
+     color: #000;
+     -webkit-text-stroke: 0px;
+     border: none;
+     box-shadow: none;
+     padding: 2rem 3rem;
+     clip-path: polygon(
+         0% 20%, 40% 20%, 30% 0%, 70% 20%, 100% 20%, 
+         60% 50%, 90% 60%, 20% 100%, 40% 60%, 0% 60%
+     );
+     filter: drop-shadow(4px 4px 0px #000);
+  }
+  
+  /* 4. The "Star" (BOOM!) */
+  .click-pop.shape-star {
+      background: #00E5FF; /* Cyan */
+      color: #000;
+      -webkit-text-stroke: 0px;
+      border: none;
+      box-shadow: none;
+      padding: 3rem;
+      clip-path: polygon(
+          50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 
+          50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%
+      );
+      filter: drop-shadow(4px 4px 0px #000);
+      transform: translate(-50%, -50%) rotate(15deg);
+  }
+  
+  /* 5. The "Box" (Standard) */
+  .click-pop.shape-box {
+      /* Inherits default look but maybe different color */
+      background: #FFF;
+      color: #000;
+      -webkit-text-stroke: 0px;
+      transform: translate(-50%, -50%) rotate(-5deg);
+  }
+
+  
+  @keyframes pop-animation {
+    0% {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(0) rotate(0deg);
+    }
+    50% {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1.2) rotate(var(--rotation, 0deg));
+    }
+    80% {
+       opacity: 1;
+       transform: translate(-50%, -50%) scale(1.0) rotate(var(--rotation, 0deg));
+    }
+    100% {
+      opacity: 0;
+      transform: translate(-50%, -100%) scale(0.8) rotate(var(--rotation, 0deg));
+    }
+  }
