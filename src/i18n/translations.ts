@@ -55,7 +55,10 @@ export const translations = {
     "pricing.packet3.feat3": "API Development",
     "pricing.packet3.feat4": "High Scalability Architecture",
     "pricing.packet3.feat5": "Priority Support",
-    "pricing.cta": "Choose This Plan"
+    "pricing.cta": "Choose This Plan",
+    "pricing.confuse.title": "Confused?",
+    "pricing.confuse.desc": "Consultation is <span class=\"bg-black text-white px-2 group-hover:bg-primary group-hover:scale-110 inline-block transition-all\">100% FREE</span>. Let's chat first!",
+    "pricing.confuse.btn": "Free Consult"
   },
   id: {
     "nav.available": "TERSEDIA UNTUK KERJA",
@@ -113,6 +116,9 @@ export const translations = {
     "pricing.packet3.feat3": "Pengembangan API",
     "pricing.packet3.feat4": "Arsitektur Skalabilitas Tinggi",
     "pricing.packet3.feat5": "Dukungan Prioritas",
-    "pricing.cta": "Pilih Paket Ini"
+    "pricing.cta": "Pilih Paket Ini",
+    "pricing.confuse.title": "Bingung?",
+    "pricing.confuse.desc": "Konsultasi itu <span class=\"bg-black text-white px-2 group-hover:bg-primary group-hover:scale-110 inline-block transition-all\">GRATIS 100%</span>. Yuk ngobrol dulu!",
+    "pricing.confuse.btn": "Konsul Gratis"
   }
 };
