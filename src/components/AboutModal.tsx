@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
-import { X, Mail, Github, Linkedin, Terminal, Cpu, Database, Layout } from 'lucide-react';
+import { X, Mail, Github, Linkedin, Terminal, Cpu, Database, Layout, Shield } from 'lucide-react';
 import { useStore } from '@nanostores/react';
 import { languageStore } from '../stores/languageStore';
 
 const content = {
   en: {
-    role: "Full-Stack Engineer | Digital Business Strategist",
+    role: "Cybersecurity Blue Team | IT Consultant",
     summaryTitle: "PROFESSIONAL SUMMARY",
-    summaryP1: "A <span class=\"font-bold bg-yellow-300 px-1\">Digital Business Strategist & Engineer</span> bridging the gap between technical execution and market strategy. My focus isn't just writing code, but creating solutions that solve real business problems and drive measurable growth.",
-    summaryP2: "I have deep interest in <strong>Product Management</strong>, <strong>IT Consulting</strong>, and <strong>Digital Transformation</strong>. My greatest strength lies in <span class=\"underline decoration-4 decoration-[#ea2a33]\">Strategic Leadership</span> and adaptive communication—translating complex technical language into high-value business solutions. I am driven by the ambition to turn raw ideas into <em>scalable</em> and <em>profitable</em> digital products.",
+    summaryP1: "A <span class=\"font-bold bg-yellow-300 px-1\">Cybersecurity Blue Team Analyst & IT Consultant</span> passionate about defending digital infrastructure and empowering organizations through strategic technology consulting. My focus is on threat detection, incident response, and building resilient security postures.",
+    summaryP2: "I have deep interest in <strong>Cyber Defense</strong>, <strong>IT Consulting</strong>, and <strong>Digital Forensics</strong>. My greatest strength lies in <span class=\"underline decoration-4 decoration-[#ea2a33]\">Analytical Thinking</span> and adaptive communication—translating complex security threats into actionable business strategies. I am driven by the ambition to protect digital ecosystems and build <em>secure</em> and <em>resilient</em> IT infrastructure.",
     buttons: {
       contact: "Contact Me",
       open: "Open for Work"
@@ -16,39 +16,33 @@ const content = {
     toolkit: "Technical Toolkit",
     categories: {
       languages: "Languages",
-      backend: "Backend & DB",
-      frontend: "Frontend",
+      soc: "SOC & Monitoring",
+      siem: "SIEM & Log Analysis",
       cloud: "Cloud & DevOps",
-      logic: "Logic & Emerging Tech"
+      network: "Network & Forensics"
     },
-    edgeTitle: "The \"Saka\" Edge",
-    edge: [
-      {
-        title: "Revenue-Driven",
-        desc: "I don't just code; I build for business profitability."
-      },
-      {
-        title: "Logic Over Fluff",
-        desc: "Database optimization > Button colors."
-      },
-      {
-        title: "Optimizer",
-        desc: "Fastest path to market without sacrificing quality."
-      }
-    ],
     businessTitle: "Business Focus",
     careerGoals: "CAREER GOALS",
     businessDesc: "Expanding beyond code to strategic roles:",
-    businessTags: ["Product Management", "IT Consultant", "Digital Strategy", "Tech Solutions"],
-    cEngineering: "Engineering",
-    cStrategy: "SaaS Strategy",
-    cSystems: "Systems Logic",
-    cScalability: "Scalability",
+    businessTags: ["Cybersecurity Blue Team", "IT Consultant", "Digital Forensics", "Threat Detection"],
+    cEngineering: "Cyber Defense",
+    cStrategy: "IT Strategy",
+    cSystems: "Threat Analysis",
+    cScalability: "Incident Response",
     coreDescs: [
-      "Proficient in complex backend development (Spring Boot) & high-performance systems (C++, Golang).",
-      "Expert in designing product roadmaps, BMC, and market-oriented Value Propositions.",
-      "Deep understanding of data structures, algorithm optimization, and complex state management.",
-      "Focus on secure applications, robust architecture, and readiness for massive scaling."
+      "Proficient in network security monitoring, SIEM tools, and defense-in-depth strategies.",
+      "Expert in IT consulting, digital transformation, and technology strategy for organizations.",
+      "Deep understanding of threat modeling, log analysis, and security incident investigation.",
+      "Focus on incident response planning, vulnerability assessment, and security architecture."
+    ],
+    certsTitle: "Certifications",
+    certs: [
+      { name: "Blockchain Basics", issuer: "Cyfrin Updraft", date: "Mar 2026", id: "BBCC-SSLHD74M97PVZ", logo: "/logos/cyfrin.svg", color: "#6366f1" },
+      { name: "Google Cybersecurity", issuer: "Google", date: "Mar 2026", id: "6RI3Y1YSE77N", logo: "/logos/google.svg", color: "#4285F4" },
+      { name: "Cyber Job Simulation", issuer: "Deloitte Australia", date: "Mar 2026", id: "feei7F6FK3ELf95EF", logo: "/logos/deloitte.svg", color: "#86BC25" },
+      { name: "Azure AI Fundamentals", issuer: "Microsoft", date: "Mar 2026", id: "yXwx-uTCL", logo: "/logos/microsoft.svg", color: "#0078D4" },
+      { name: "Technology Job Simulation", issuer: "Deloitte Australia", date: "Mar 2026", id: "pHPSRY9zAhDy3HJLM", logo: "/logos/deloitte.svg", color: "#86BC25" },
+      { name: "Strategy Consulting Job Simulation", issuer: "Accenture Australia", date: "Mar 2026", id: "wZYs263E2mAB2LLF8", logo: "/logos/accenture.svg", color: "#A100FF" }
     ],
     projectsTitle: "Projects",
     projects: [
@@ -61,12 +55,12 @@ const content = {
         quote: "\"Building an efficient toll bridge for distributing student talent to the small business sector.\""
       },
       {
-        title: "VRAIS",
-        role: "Product Visionary",
-        tag: "Digital Art Certification Platform",
-        business: "Identifying AI-era market gaps for valuable digital art certification.",
-        tech: "Data integrity & security architecture. Valid \"digital fingerprints\".",
-        quote: "\"Not just a gallery, but a digital land deed bureau to keep artist works safe from AI.\""
+        title: "Network Traffic Analysis",
+        role: "Security Analyst",
+        tag: "Netsupport RAT Detection & Analysis",
+        business: "Analyzing malicious network traffic patterns to detect and document Netsupport RAT activity.",
+        tech: "Wireshark, Pcap analysis, traffic pattern recognition, threat intelligence.",
+        quote: "\"Detecting threats through deep packet inspection—turning raw traffic into actionable security intelligence.\""
       }
     ],
     backgroundTitle: "Background",
@@ -78,10 +72,10 @@ const content = {
     science: "Science Major"
   },
   id: {
-    role: "Full-Stack Engineer | Strategis Bisnis Digital",
+    role: "Cybersecurity Blue Team | Konsultan IT",
     summaryTitle: "RINGKASAN PROFESIONAL",
-    summaryP1: "Seorang <span class=\"font-bold bg-yellow-300 px-1\">Digital Business Strategist & Engineer</span> dengan visi menjembatani kesenjangan antara eksekusi teknis dan strategi pasar. Fokus utama saya bukan sekadar menulis kode, melainkan menciptakan solusi yang memecahkan masalah bisnis nyata dan mendorong pertumbuhan yang terukur.",
-    summaryP2: "Saya memiliki ketertarikan mendalam pada <strong>Manajemen Produk</strong>, <strong>Konsultansi IT</strong>, dan <strong>Transformasi Digital</strong>. Kekuatan terbesar saya terletak pada <span class=\"underline decoration-4 decoration-[#ea2a33]\">Strategic Leadership</span> dan kemampuan komunikasi adaptif—menerjemahkan bahasa teknis yang kompleks menjadi solusi bisnis yang bernilai tinggi. Saya didorong oleh ambisi untuk mengubah ide mentah menjadi produk digital yang <em>scalable</em> dan <em>profitable</em>.",
+    summaryP1: "Seorang <span class=\"font-bold bg-yellow-300 px-1\">Cybersecurity Blue Team Analyst & Konsultan IT</span> yang bersemangat melindungi infrastruktur digital dan memberdayakan organisasi melalui konsultansi teknologi strategis. Fokus utama saya pada deteksi ancaman, respons insiden, dan membangun postur keamanan yang tangguh.",
+    summaryP2: "Saya memiliki ketertarikan mendalam pada <strong>Pertahanan Siber</strong>, <strong>Konsultansi IT</strong>, dan <strong>Forensik Digital</strong>. Kekuatan terbesar saya terletak pada <span class=\"underline decoration-4 decoration-[#ea2a33]\">Berpikir Analitis</span> dan kemampuan komunikasi adaptif—menerjemahkan ancaman keamanan kompleks menjadi strategi bisnis yang dapat ditindaklanjuti. Saya didorong oleh ambisi untuk melindungi ekosistem digital dan membangun infrastruktur IT yang <em>aman</em> dan <em>tangguh</em>.",
     buttons: {
       contact: "Hubungi Saya",
       open: "Siap Bekerja"
@@ -89,39 +83,33 @@ const content = {
     toolkit: "Toolkit Teknis",
     categories: {
       languages: "Bahasa",
-      backend: "Backend & DB",
-      frontend: "Frontend",
+      soc: "SOC & Pemantauan",
+      siem: "SIEM & Analisis Log",
       cloud: "Cloud & DevOps",
-      logic: "Logika & Tek. Baru"
+      network: "Jaringan & Forensik"
     },
-    edgeTitle: "Keunggulan \"Saka\"",
-    edge: [
-      {
-        title: "Berorientasi Pendapatan",
-        desc: "Saya tidak hanya koding; saya membangun untuk profitabilitas bisnis."
-      },
-      {
-        title: "Logika > Kosmetik",
-        desc: "Optimasi database > Warna tombol."
-      },
-      {
-        title: "Optimizer",
-        desc: "Jalur tercepat ke pasar tanpa mengorbankan kualitas."
-      }
-    ],
     businessTitle: "Fokus Bisnis",
     careerGoals: "TUJUAN KARIR",
     businessDesc: "Berekspansi melampaui kode ke peran strategis:",
-    businessTags: ["Manajemen Produk", "Konsultan IT", "Strategi Digital", "Solusi Teknis"],
-    cEngineering: "Rekayasa",
-    cStrategy: "Strategi SaaS",
-    cSystems: "Logika Sistem",
-    cScalability: "Skalabilitas",
+    businessTags: ["Cybersecurity Blue Team", "Konsultan IT", "Forensik Digital", "Deteksi Ancaman"],
+    cEngineering: "Pertahanan Siber",
+    cStrategy: "Strategi IT",
+    cSystems: "Analisis Ancaman",
+    cScalability: "Respons Insiden",
     coreDescs: [
-      "Mahir dalam pengembangan backend kompleks (Spring Boot) & sistem performa tinggi (C++, Golang).",
-      "Ahli merancang roadmap produk, BMC, dan Value Proposition yang berorientasi pasar.",
-      "Paham mendalam struktur data, optimasi algoritma, dan manajemen state kompleks.",
-      "Fokus pada aplikasi yang aman, arsitektur kokoh, dan siap untuk scaling masif."
+      "Mahir dalam pemantauan keamanan jaringan, SIEM tools, dan strategi pertahanan berlapis.",
+      "Ahli dalam konsultansi IT, transformasi digital, dan strategi teknologi untuk organisasi.",
+      "Paham mendalam pemodelan ancaman, analisis log, dan investigasi insiden keamanan.",
+      "Fokus pada perencanaan respons insiden, penilaian kerentanan, dan arsitektur keamanan."
+    ],
+    certsTitle: "Sertifikasi",
+    certs: [
+      { name: "Blockchain Basics", issuer: "Cyfrin Updraft", date: "Mar 2026", id: "BBCC-SSLHD74M97PVZ", logo: "/logos/cyfrin.svg", color: "#6366f1" },
+      { name: "Google Cybersecurity", issuer: "Google", date: "Mar 2026", id: "6RI3Y1YSE77N", logo: "/logos/google.svg", color: "#4285F4" },
+      { name: "Cyber Job Simulation", issuer: "Deloitte Australia", date: "Mar 2026", id: "feei7F6FK3ELf95EF", logo: "/logos/deloitte.svg", color: "#86BC25" },
+      { name: "Azure AI Fundamentals", issuer: "Microsoft", date: "Mar 2026", id: "yXwx-uTCL", logo: "/logos/microsoft.svg", color: "#0078D4" },
+      { name: "Technology Job Simulation", issuer: "Deloitte Australia", date: "Mar 2026", id: "pHPSRY9zAhDy3HJLM", logo: "/logos/deloitte.svg", color: "#86BC25" },
+      { name: "Strategy Consulting Job Simulation", issuer: "Accenture Australia", date: "Mar 2026", id: "wZYs263E2mAB2LLF8", logo: "/logos/accenture.svg", color: "#A100FF" }
     ],
     projectsTitle: "Proyek",
     projects: [
@@ -134,12 +122,12 @@ const content = {
         quote: "\"Membangun jembatan tol yang efisien buat distribusi talent mahasiswa ke sektor bisnis kecil.\""
       },
       {
-        title: "VRAIS",
-        role: "Visioner Produk",
-        tag: "Platform Sertifikasi Seni Digital",
-        business: "Identifikasi celah pasar era AI untuk sertifikasi karya seni digital bernilai jual.",
-        tech: "Arsitektur integritas data & keamanan. \"Sidik jari digital\" valid.",
-        quote: "\"Bukan cuma galeri, tapi biro sertifikat tanah digital agar karya seniman aman dari AI.\""
+        title: "Network Traffic Analysis",
+        role: "Analis Keamanan",
+        tag: "Deteksi & Analisis Netsupport RAT",
+        business: "Menganalisis pola lalu lintas jaringan berbahaya untuk mendeteksi dan mendokumentasikan aktivitas Netsupport RAT.",
+        tech: "Wireshark, analisis Pcap, pengenalan pola lalu lintas, intelijen ancaman.",
+        quote: "\"Mendeteksi ancaman melalui inspeksi paket mendalam—mengubah lalu lintas mentah menjadi intelijen keamanan yang dapat ditindaklanjuti.\""
       }
     ],
     backgroundTitle: "Latar Belakang",
@@ -234,7 +222,7 @@ const AboutModal = () => {
                          <a href="https://github.com/SamuelKaunang" target="_blank" className="p-3 bg-white border-2 border-black hover:bg-black hover:text-white transition-colors">
                             <Github size={20} />
                          </a>
-                         <a href="https://www.linkedin.com/in/samuel-kaunang-948246286" target="_blank" className="p-3 bg-white border-2 border-black hover:bg-[#0077b5] hover:text-white transition-colors">
+                         <a href="https://www.linkedin.com/in/sakahere4u" target="_blank" className="p-3 bg-white border-2 border-black hover:bg-[#0077b5] hover:text-white transition-colors">
                             <Linkedin size={20} />
                          </a>
                     </div>
@@ -253,23 +241,23 @@ const AboutModal = () => {
                                 <div>
                                     <h4 className="font-bold text-[#ea2a33] mb-2 text-sm uppercase">{t.categories.languages}</h4>
                                     <div className="flex flex-wrap gap-2">
-                                        {['Java', 'C++', 'Golang', 'Python', 'TypeScript', 'Node.js'].map(tech => (
+                                        {['Java', 'Golang', 'Python'].map(tech => (
                                             <span key={tech} className="bg-gray-800 px-2 py-1 text-xs font-bold border border-gray-600 ml-0">{tech}</span>
                                         ))}
                                     </div>
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-[#ea2a33] mb-2 text-sm uppercase">{t.categories.backend}</h4>
+                                    <h4 className="font-bold text-[#ea2a33] mb-2 text-sm uppercase">{t.categories.soc}</h4>
                                     <div className="flex flex-wrap gap-2">
-                                        {['Spring Boot', 'MySQL', 'MongoDB', 'JPA'].map(tech => (
+                                        {['Splunk', 'ELK Stack', 'Wazuh', 'CrowdStrike'].map(tech => (
                                             <span key={tech} className="bg-gray-800 px-2 py-1 text-xs font-bold border border-gray-600">{tech}</span>
                                         ))}
                                     </div>
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-[#ea2a33] mb-2 text-sm uppercase">{t.categories.frontend}</h4>
+                                    <h4 className="font-bold text-[#ea2a33] mb-2 text-sm uppercase">{t.categories.siem}</h4>
                                     <div className="flex flex-wrap gap-2">
-                                        {['React.js', 'State Mgmt', 'Tailwind'].map(tech => (
+                                        {['QRadar', 'ArcSight', 'Graylog', 'Syslog'].map(tech => (
                                             <span key={tech} className="bg-gray-800 px-2 py-1 text-xs font-bold border border-gray-600">{tech}</span>
                                         ))}
                                     </div>
@@ -277,33 +265,20 @@ const AboutModal = () => {
                                 <div>
                                     <h4 className="font-bold text-[#ea2a33] mb-2 text-sm uppercase">{t.categories.cloud}</h4>
                                     <div className="flex flex-wrap gap-2">
-                                        {['Docker', 'Railway', 'Oracle Cloud', 'Render'].map(tech => (
+                                        {['Docker', 'Oracle Cloud', 'Azure', 'AWS'].map(tech => (
                                             <span key={tech} className="bg-gray-800 px-2 py-1 text-xs font-bold border border-gray-600">{tech}</span>
                                         ))}
                                     </div>
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-[#ea2a33] mb-2 text-sm uppercase">{t.categories.logic}</h4>
+                                    <h4 className="font-bold text-[#ea2a33] mb-2 text-sm uppercase">{t.categories.network}</h4>
                                     <div className="flex flex-wrap gap-2">
-                                        {['Blockchain Dev', 'Complex Algos', 'Process Mining'].map(tech => (
+                                        {['Wireshark', 'Nmap', 'Volatility', 'Autopsy'].map(tech => (
                                             <span key={tech} className="bg-gray-800 px-2 py-1 text-xs font-bold border border-gray-600">{tech}</span>
                                         ))}
                                     </div>
                                 </div>
                             </div>
-                        </div>
-
-                        {/* Why Me */}
-                        <div className="bg-[#ea2a33] p-6 border-4 border-black shadow-hard">
-                             <h3 className="text-xl font-black uppercase mb-4 text-white border-b-4 border-black inline-block">{t.edgeTitle}</h3>
-                             <ul className="space-y-4">
-                                {t.edge.map((item, i) => (
-                                    <li key={i} className="bg-white border-4 border-black p-3 text-sm font-bold shadow-sm">
-                                        <span className="block text-[#ea2a33] uppercase text-xs mb-1">{item.title}</span>
-                                        {item.desc}
-                                    </li>
-                                ))}
-                             </ul>
                         </div>
 
                         {/* Business Interests */}
@@ -373,6 +348,68 @@ const AboutModal = () => {
                                                     {project.quote}
                                                 </p>
                                             </div>
+                                        </div>
+                                    </div>
+                                ))}
+                            </div>
+                        </section>
+
+                        {/* Certifications - HIGHLIGHTED SECTION */}
+                        <section className="relative">
+                            {/* Section Header - Bold Banner */}
+                            <div className="bg-black border-4 border-black p-6 mb-6 relative overflow-hidden">
+                                <div className="absolute top-0 left-0 w-full h-1 bg-[#ea2a33]"></div>
+                                <div className="flex items-center justify-between">
+                                    <h3 className="text-3xl font-black uppercase text-white flex items-center gap-4">
+                                        <Shield size={32} className="text-[#ea2a33] animate-pulse" style={{animationDuration: '2s'}} /> {t.certsTitle}
+                                    </h3>
+                                    <div className="bg-[#ea2a33] text-white px-4 py-2 font-black text-lg border-2 border-white rotate-3 hover:-rotate-3 transition-transform cursor-default">
+                                        {t.certs.length} ✓
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            {/* Cert Cards Grid */}
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                                {t.certs.map((cert, i) => (
+                                    <div key={i} className="bg-white border-4 border-black p-0 shadow-hard-sm hover:shadow-hard hover:-translate-y-2 transition-all group relative overflow-hidden" style={{borderBottomColor: cert.color}}>
+                                        {/* Top color strip */}
+                                        <div className="h-1.5 w-full" style={{backgroundColor: cert.color}}></div>
+                                        
+                                        <div className="p-5">
+                                            <div className="flex items-start gap-4">
+                                                {/* Logo container with brand bg */}
+                                                <div className="w-14 h-14 rounded-lg border-2 border-black flex items-center justify-center flex-shrink-0 group-hover:scale-110 group-hover:-rotate-6 transition-all shadow-sm overflow-hidden" style={{backgroundColor: cert.color + '15'}}>
+                                                    <img 
+                                                        src={cert.logo} 
+                                                        alt={cert.issuer} 
+                                                        className="w-9 h-9 object-contain"
+                                                        loading="lazy"
+                                                        onError={(e) => {
+                                                            (e.target as HTMLImageElement).style.display = 'none';
+                                                            (e.target as HTMLImageElement).parentElement!.innerHTML = '<span style="font-size:24px">🛡️</span>';
+                                                        }}
+                                                    />
+                                                </div>
+                                                
+                                                <div className="flex-1 min-w-0">
+                                                    {/* Cert name */}
+                                                    <h4 className="font-black text-base uppercase leading-tight mb-1 group-hover:translate-x-1 transition-transform">{cert.name}</h4>
+                                                    {/* Issuer with brand color */}
+                                                    <p className="text-sm font-bold uppercase" style={{color: cert.color}}>{cert.issuer}</p>
+                                                    
+                                                    {/* Date and ID row */}
+                                                    <div className="flex items-center gap-3 mt-3 flex-wrap">
+                                                        <span className="text-xs font-bold text-gray-500 uppercase bg-gray-100 px-2 py-0.5 border border-gray-200">{cert.date}</span>
+                                                        <span className="text-[10px] font-mono bg-black text-white px-2 py-0.5 tracking-wider">{cert.id}</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        {/* Verified badge on hover */}
+                                        <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity">
+                                            <div className="bg-green-500 text-white text-[10px] font-black px-2 py-0.5 uppercase border border-black rotate-3">Verified ✓</div>
                                         </div>
                                     </div>
                                 ))}

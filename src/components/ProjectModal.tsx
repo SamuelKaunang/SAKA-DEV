@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { X, Home, Menu, Sparkles, ArrowRight } from 'lucide-react';
+import { X, Home, Menu, Sparkles, ArrowRight, Shield } from 'lucide-react';
 import { useStore } from '@nanostores/react';
 import { languageStore } from '../stores/languageStore';
 
@@ -75,49 +75,49 @@ const projectsData: Record<string, Record<string, ProjectData>> = {
   },
   "2": {
     en: {
-      title: "VRAIS",
-      category: "Trust Protocol",
-      description: "The 'Humanity Guardian' for digital art. A multi-layer verification platform certifying human-made artwork in the age of AI.",
-      image: "/VRAIS.png",
-      tags: ["Go (Fiber)", "Python (AI)", "Next.js 16", "Docker"],
-      challenge: "The flood of AI-generated content has eroded trust in digital art, making it nearly impossible to distinguish between human mastery and algorithmic output, devaluing genuine artist effort.",
-      solution: "A rigorous, multi-tiered verification engine (WIP Hashing, Layer Parsing, C2PA) that awards cryptographic 'Authenticity Badges' (Diamond/Gold/Silver) to proven human works.",
-      impact: "Established a new standard for digital authenticity, empowering artists to reclaim the value of their labor through verifiable proof of work.",
+      title: "Network Traffic Analysis",
+      category: "Cybersecurity",
+      description: "Netsupport RAT detection and network forensics analysis. Identifying malicious traffic patterns through deep packet inspection.",
+      image: "/network-analysis.png",
+      tags: ["Wireshark", "Pcap", "Forensics", "Threat Intel"],
+      challenge: "Identifying and documenting Netsupport RAT activity hidden within legitimate network traffic, requiring precise packet-level analysis to distinguish malicious patterns.",
+      solution: "Systematic network traffic capture and analysis using Wireshark and pcap tools, identifying RAT command-and-control patterns, DNS queries, and payload signatures.",
+      impact: "Produced comprehensive documentation of Netsupport RAT network behaviors, enabling faster threat detection and response for blue team operations.",
       features: [
-        "Multi-Method Verification (WIP Hashing, Layer Parsing)",
-        "Authenticity Badging System (Diamond to Bronze)",
-        "C2PA Content Credentials Standard Integration",
-        "Verified Artist Public Portfolios"
+        "Deep Packet Inspection & Analysis",
+        "RAT C2 Traffic Pattern Identification",
+        "DNS & HTTP Anomaly Detection",
+        "Comprehensive Threat Documentation"
       ],
       techSpecs: {
-        "Core API": "Go (Fiber) + GORM",
-        "AI Engine": "Python (FastAPI + PSD Tools)",
-        "Frontend": "Next.js 16 (App Router + React 19)",
-        "Database": "PostgreSQL + Redis",
-        "Infra": "Docker Compose (Microservices)"
+        "Analysis Tool": "Wireshark",
+        "Data Format": "Pcap / Pcapng",
+        "Focus": "Netsupport RAT Detection",
+        "Output": "Threat Intelligence Report",
+        "Repository": "GitHub (Public)"
       }
     },
     id: {
-      title: "VRAIS",
-      category: "Protokol Kepercayaan",
-      description: "'Penjaga Kemanusiaan' untuk seni digital. Platform verifikasi multi-lapis yang mensertifikasi karya seni buatan manusia di era AI.",
-      image: "/VRAIS.png",
-      tags: ["Go (Fiber)", "Python (AI)", "Next.js 16", "Docker"],
-      challenge: "Banjir konten yang dihasilkan AI telah mengikis kepercayaan pada seni digital, membuatnya hampir mustahil untuk membedakan antara keahlian manusia dan output algoritmik, mendevaluasi upaya seniman asli.",
-      solution: "Mesin verifikasi multi-tingkat yang ketat (WIP Hashing, Layer Parsing, C2PA) yang memberikan 'Lencana Keaslian' kriptografis (Berlian/Emas/Perak) untuk karya manusia yang terbukti.",
-      impact: "Menetapkan standar baru untuk keaslian digital, memberdayakan seniman untuk merebut kembali nilai kerja keras mereka melalui bukti kerja yang dapat diverifikasi.",
+      title: "Network Traffic Analysis",
+      category: "Keamanan Siber",
+      description: "Deteksi Netsupport RAT dan analisis forensik jaringan. Mengidentifikasi pola lalu lintas berbahaya melalui inspeksi paket mendalam.",
+      image: "/network-analysis.png",
+      tags: ["Wireshark", "Pcap", "Forensik", "Intelijen Ancaman"],
+      challenge: "Mengidentifikasi dan mendokumentasikan aktivitas Netsupport RAT yang tersembunyi dalam lalu lintas jaringan sah, membutuhkan analisis tingkat paket yang presisi.",
+      solution: "Penangkapan dan analisis lalu lintas jaringan secara sistematis menggunakan Wireshark dan alat pcap, mengidentifikasi pola command-and-control RAT, query DNS, dan signature payload.",
+      impact: "Menghasilkan dokumentasi komprehensif perilaku jaringan Netsupport RAT, memungkinkan deteksi dan respons ancaman yang lebih cepat untuk operasi blue team.",
       features: [
-        "Verifikasi Multi-Metode (WIP Hashing, Layer Parsing)",
-        "Sistem Lencana Keaslian (Berlian hingga Perunggu)",
-        "Integrasi Standar Kredensial Konten C2PA",
-        "Portofolio Publik Seniman Terverifikasi"
+        "Inspeksi & Analisis Paket Mendalam",
+        "Identifikasi Pola Lalu Lintas C2 RAT",
+        "Deteksi Anomali DNS & HTTP",
+        "Dokumentasi Ancaman Komprehensif"
       ],
       techSpecs: {
-        "Core API": "Go (Fiber) + GORM",
-        "AI Engine": "Python (FastAPI + PSD Tools)",
-        "Frontend": "Next.js 16 (App Router + React 19)",
-        "Database": "PostgreSQL + Redis",
-        "Infra": "Docker Compose (Microservices)"
+        "Alat Analisis": "Wireshark",
+        "Format Data": "Pcap / Pcapng",
+        "Fokus": "Deteksi Netsupport RAT",
+        "Output": "Laporan Intelijen Ancaman",
+        "Repositori": "GitHub (Publik)"
       }
     }
   },
@@ -229,7 +229,7 @@ const ProjectModal = () => {
 
         {/* COL 1: Image (30%) */}
         <div className={`w-full md:w-[30%] border-b-4 md:border-b-0 md:border-r-4 border-black bg-gray-100 relative group flex flex-col items-center justify-center shrink-0 h-[40%] md:h-full overflow-hidden ${project.isMobile ? 'p-8 bg-gray-200' : ''}`}>
-             {project.title !== 'VRAIS' && project.title !== 'QuickTurn' && project.title !== 'Rootine' && (
+             {project.title !== 'Network Traffic Analysis' && project.title !== 'QuickTurn' && project.title !== 'Rootine' && (
                  <div className={`relative w-full overflow-hidden ${project.isMobile ? 'h-auto aspect-[9/19] rounded-[2rem] border-8 border-gray-900 shadow-xl bg-black' : 'h-full'}`}>
                      <div className={`absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/black-scales.png')] opacity-10 mix-blend-overlay z-10 pointer-events-none ${project.isMobile ? 'rounded-[1.5rem]' : ''}`}></div>
                      <picture>
@@ -266,61 +266,61 @@ const ProjectModal = () => {
              )}
 
         
-        {project.title === 'VRAIS' && (
-             <div className="w-full h-full bg-white p-8 flex flex-col font-sans relative overflow-hidden text-left group overflow-y-auto no-scrollbar">
+        {project.title === 'Network Traffic Analysis' && (
+             <div className="w-full h-full bg-gray-950 p-8 flex flex-col font-mono relative overflow-hidden text-left group overflow-y-auto no-scrollbar">
                   {/* Floating Decorative Elements */}
-                  <div className="absolute top-12 right-8 w-3 h-3 bg-purple-400 rounded-full animate-bounce" style={{animationDelay: '0s', animationDuration: '2s'}}></div>
-                  <div className="absolute top-24 right-16 w-2 h-2 bg-purple-300 rounded-full animate-bounce" style={{animationDelay: '0.5s', animationDuration: '2.5s'}}></div>
-                  <div className="absolute top-16 left-12 w-4 h-4 bg-purple-200 rounded-full animate-ping" style={{animationDuration: '3s'}}></div>
+                  <div className="absolute top-12 right-8 w-3 h-3 bg-green-400 rounded-full animate-bounce" style={{animationDelay: '0s', animationDuration: '2s'}}></div>
+                  <div className="absolute top-24 right-16 w-2 h-2 bg-red-400 rounded-full animate-bounce" style={{animationDelay: '0.5s', animationDuration: '2.5s'}}></div>
+                  <div className="absolute top-16 left-12 w-4 h-4 bg-green-300 rounded-full animate-ping" style={{animationDuration: '3s'}}></div>
                   
                   {/* Header */}
-                  <div className="flex justify-between items-center mb-12 animate-in slide-in-from-top-4 fade-in duration-700">
+                  <div className="flex justify-between items-center mb-8 animate-in slide-in-from-top-4 fade-in duration-700">
                     <div className="flex items-center gap-2">
-                         <div className="bg-purple-900 p-1.5 rounded-lg text-white hover:scale-125 hover:rotate-12 hover:shadow-lg transition-all duration-300 cursor-pointer shadow-md animate-pulse" style={{animationDuration: '3s'}}>
-                            <Home size={18} />
+                         <div className="bg-green-500 p-1.5 rounded-lg text-black hover:scale-125 hover:rotate-12 hover:shadow-lg transition-all duration-300 cursor-pointer shadow-md animate-pulse" style={{animationDuration: '3s'}}>
+                            <Shield size={18} />
                          </div>
-                      <span className="font-bold text-xl tracking-tight text-black cursor-default hover:text-purple-700 transition-colors">VRAIS</span>
+                      <span className="font-bold text-xl tracking-tight text-green-400 cursor-default hover:text-green-300 transition-colors">NetTraffic</span>
                     </div>
-                    <Menu size={24} className="text-black hover:rotate-180 hover:text-purple-600 transition-all duration-700 cursor-pointer" />
+                    <Menu size={24} className="text-green-400 hover:rotate-180 hover:text-red-400 transition-all duration-700 cursor-pointer" />
                   </div>
 
                   {/* Content */}
                   <div className="flex-1 flex flex-col justify-center animate-in slide-in-from-bottom-8 fade-in duration-700 delay-150">
                     
                     <div className="mb-8">
-                      <div className="inline-flex items-center gap-2 bg-purple-50 border border-purple-100 px-3 py-1.5 rounded-full text-xs font-bold text-purple-700 mb-6 w-fit hover:scale-110 hover:bg-purple-100 hover:shadow-md transition-all cursor-help shadow-sm animate-in zoom-in duration-500 delay-300">
-                        <Sparkles size={14} className="text-purple-600 animate-spin" style={{animationDuration: '4s'}} />
-                        AUTHENTICITY 2.0
+                      <div className="inline-flex items-center gap-2 bg-red-900/30 border border-red-500/30 px-3 py-1.5 rounded-full text-xs font-bold text-red-400 mb-6 w-fit hover:scale-110 hover:bg-red-900/50 hover:shadow-md transition-all cursor-help shadow-sm animate-in zoom-in duration-500 delay-300">
+                        <span className="animate-pulse" style={{animationDuration: '1.5s'}}>⚠</span>
+                        RAT DETECTED
                       </div>
                       
-                      <h1 className="text-5xl md:text-5xl font-black leading-[0.9] text-black mb-6 tracking-tighter group-hover:translate-x-2 transition-transform duration-500 cursor-default">
-                        <span className="inline-block hover:text-purple-700 hover:-rotate-2 transition-all duration-300">Certified Soul.</span><br />
-                        <span className="text-gray-300 group-hover:text-purple-300 transition-colors duration-500">No Prompt<br />Required.</span>
+                      <h1 className="text-5xl md:text-5xl font-black leading-[0.9] text-green-400 mb-6 tracking-tighter group-hover:translate-x-2 transition-transform duration-500 cursor-default">
+                        <span className="inline-block hover:text-red-400 hover:-rotate-2 transition-all duration-300">Netsupport</span><br />
+                        <span className="text-gray-600 group-hover:text-green-600 transition-colors duration-500">RAT<br />Analysis.</span>
                       </h1>
                       
-                      <p className="text-sm font-medium text-gray-500 leading-relaxed max-w-xs mb-8 animate-in fade-in slide-in-from-left-4 duration-700 delay-500">
+                      <p className="text-sm font-medium text-gray-400 leading-relaxed max-w-xs mb-8 animate-in fade-in slide-in-from-left-4 duration-700 delay-500">
                          {language === 'en' 
-                          ? <>The new standard for digital authenticity. We verify the <em className="text-purple-700 not-italic font-bold hover:underline cursor-help">process</em>, not just the pixels, restoring value to human artistry.</>
-                          : <>Standar baru untuk keaslian digital. Kami memverifikasi <em className="text-purple-700 not-italic font-bold hover:underline cursor-help">proses</em>, bukan hanya piksel, mengembalikan nilai pada seni manusia.</>
+                          ? <>Deep packet inspection and traffic analysis to detect and document <em className="text-green-400 not-italic font-bold hover:underline cursor-help">Netsupport RAT</em> command-and-control patterns.</>
+                          : <>Inspeksi paket mendalam dan analisis lalu lintas untuk mendeteksi dan mendokumentasikan pola <em className="text-green-400 not-italic font-bold hover:underline cursor-help">Netsupport RAT</em> command-and-control.</>
                          }
                       </p>
                     </div>
 
                     {/* Buttons */}
                     <div className="space-y-3 z-30 relative">
-                      <button className="w-full py-4 bg-[#5e4b78] text-white rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-[#4a3b60] hover:-translate-y-2 hover:shadow-xl active:scale-95 transition-all shadow-lg shadow-purple-200 hover:shadow-purple-400 text-lg group/btn">
-                        <span className="group-hover/btn:tracking-wider transition-all">{language === 'en' ? 'Verify Artwork' : 'Verifikasi Karya'}</span>
+                      <a href="https://github.com/SamuelKaunang/network-traffic-analysis-netsupport-rat" target="_blank" className="w-full py-4 bg-green-500 text-black rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-green-400 hover:-translate-y-2 hover:shadow-xl active:scale-95 transition-all shadow-lg shadow-green-900 hover:shadow-green-700 text-lg group/btn">
+                        <span className="group-hover/btn:tracking-wider transition-all">{language === 'en' ? 'View on GitHub' : 'Lihat di GitHub'}</span>
                         <ArrowRight size={20} className="group-hover/btn:translate-x-2 group-hover/btn:scale-110 transition-all" />
-                      </button>
-                      <button className="w-full py-4 bg-white text-black border-2 border-gray-100 rounded-xl font-bold hover:bg-purple-50 hover:border-purple-300 hover:-translate-y-1 active:scale-95 transition-all text-lg hover:shadow-md">
-                        {language === 'en' ? 'View Gallery' : 'Lihat Galeri'}
+                      </a>
+                      <button className="w-full py-4 bg-gray-900 text-green-400 border-2 border-gray-700 rounded-xl font-bold hover:bg-gray-800 hover:border-green-500 hover:-translate-y-1 active:scale-95 transition-all text-lg hover:shadow-md">
+                        {language === 'en' ? 'View Report' : 'Lihat Laporan'}
                       </button>
                     </div>
                   </div>
                   
                   {/* Decorative Blobs */}
-                  <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-purple-100 rounded-full blur-3xl opacity-50 pointer-events-none animate-pulse"></div>
-                  <div className="absolute -top-32 -left-32 w-48 h-48 bg-purple-50 rounded-full blur-2xl opacity-40 pointer-events-none animate-pulse" style={{animationDelay: '1s'}}></div>
+                  <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-green-900 rounded-full blur-3xl opacity-30 pointer-events-none animate-pulse"></div>
+                  <div className="absolute -top-32 -left-32 w-48 h-48 bg-green-950 rounded-full blur-2xl opacity-40 pointer-events-none animate-pulse" style={{animationDelay: '1s'}}></div>
              </div>
         )}
 
