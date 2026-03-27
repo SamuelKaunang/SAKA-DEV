@@ -61,6 +61,14 @@ const content = {
         business: "Analyzing malicious network traffic patterns to detect and document Netsupport RAT activity.",
         tech: "Wireshark, Pcap analysis, traffic pattern recognition, threat intelligence.",
         quote: "\"Detecting threats through deep packet inspection—turning raw traffic into actionable security intelligence.\""
+      },
+      {
+        title: "DFIR Workbench",
+        role: "DFIR Engineer",
+        tag: "NIST SP 800-61 Incident Response Platform",
+        business: "Building an end-to-end incident response workflow for analysts, from alert detection and case management to forensic reporting.",
+        tech: "Python, Flask, SQLite, SQLAlchemy, fpdf2, Chart.js, Jinja2, Honeypot SQLite Sync.",
+        quote: "\"Turning incident chaos into a structured, traceable, and report-ready DFIR process.\""
       }
     ],
     backgroundTitle: "Background",
@@ -128,6 +136,14 @@ const content = {
         business: "Menganalisis pola lalu lintas jaringan berbahaya untuk mendeteksi dan mendokumentasikan aktivitas Netsupport RAT.",
         tech: "Wireshark, analisis Pcap, pengenalan pola lalu lintas, intelijen ancaman.",
         quote: "\"Mendeteksi ancaman melalui inspeksi paket mendalam—mengubah lalu lintas mentah menjadi intelijen keamanan yang dapat ditindaklanjuti.\""
+      },
+      {
+        title: "DFIR Workbench",
+        role: "DFIR Engineer",
+        tag: "Platform Respons Insiden NIST SP 800-61",
+        business: "Membangun alur kerja respons insiden end-to-end untuk analis, dari deteksi alert, manajemen kasus, hingga pelaporan forensik.",
+        tech: "Python, Flask, SQLite, SQLAlchemy, fpdf2, Chart.js, Jinja2, Honeypot SQLite Sync.",
+        quote: "\"Mengubah kekacauan insiden menjadi proses DFIR yang terstruktur, terlacak, dan siap dilaporkan.\""
       }
     ],
     backgroundTitle: "Latar Belakang",

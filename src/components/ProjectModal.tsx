@@ -168,6 +168,60 @@ const projectsData: Record<string, Record<string, ProjectData>> = {
         "Infra": "Docker Container (FE, BE, DB)"
       }
     }
+  },
+  "4": {
+    en: {
+      title: "DFIR Workbench",
+      category: "Digital Forensics & Incident Response",
+      description: "A Digital Forensics and Incident Response platform built with Python, covering the full IR lifecycle based on NIST SP 800-61.",
+      image: "/network-analysis.png",
+      tags: ["Python", "Flask", "SQLite", "DFIR"],
+      link: "https://github.com/SamuelKaunang/DFIR-Workpanel",
+      challenge: "Security teams need a practical and structured way to handle incidents end-to-end, from detection to reporting, while keeping evidence traceable and case timelines clear.",
+      solution: "Built DFIR Workbench with case management, artifact ingestion and hashing, timeline reconstruction, report generation, and honeypot-driven auto case creation in one integrated workflow.",
+      impact: "Accelerates analyst response and investigation consistency by centralizing case operations, evidence tracking, findings, and PDF reporting in a single operational dashboard.",
+      features: [
+        "Case Management with auto CASE-YYYY-NNN IDs",
+        "Artifact Collector for logs, uploads, and PCAP with hashing",
+        "Timeline Builder for chronological event reconstruction",
+        "Automated PDF Report Generator (Windows/Linux friendly)",
+        "Live Dashboard for cases, alerts, findings, and timeline",
+        "Honeypot Integration with SQLite auto-sync"
+      ],
+      techSpecs: {
+        "Backend": "Flask",
+        "Database": "SQLite + SQLAlchemy ORM",
+        "Report Generation": "fpdf2",
+        "Frontend": "HTML, CSS, JavaScript, Chart.js, Jinja2",
+        "Honeypot Integration": "Native SQLite Sync Service"
+      }
+    },
+    id: {
+      title: "DFIR Workbench",
+      category: "Digital Forensics & Incident Response",
+      description: "Platform Digital Forensics and Incident Response berbasis Python yang mencakup siklus IR end-to-end berdasarkan NIST SP 800-61.",
+      image: "/network-analysis.png",
+      tags: ["Python", "Flask", "SQLite", "DFIR"],
+      link: "https://github.com/SamuelKaunang/DFIR-Workpanel",
+      challenge: "Tim keamanan membutuhkan alur kerja investigasi insiden yang terstruktur dari deteksi sampai pelaporan, dengan bukti yang tetap terjaga integritas dan timeline kasus yang jelas.",
+      solution: "Mengembangkan DFIR Workbench dengan manajemen kasus, koleksi artefak dan hashing, rekonstruksi timeline, generator laporan PDF, serta auto-create case dari integrasi honeypot.",
+      impact: "Mempercepat respons dan konsistensi investigasi analis dengan sentralisasi case operation, pelacakan bukti, findings, dan reporting dalam satu dashboard operasional.",
+      features: [
+        "Manajemen Kasus dengan auto ID CASE-YYYY-NNN",
+        "Artifact Collector untuk log, upload, dan PCAP dengan hashing",
+        "Timeline Builder untuk rekonstruksi kronologis event",
+        "Generator Laporan PDF otomatis (Windows/Linux)",
+        "Dashboard live untuk case, alert, finding, dan timeline",
+        "Integrasi Honeypot dengan auto-sync SQLite"
+      ],
+      techSpecs: {
+        "Backend Web Server": "Flask",
+        "Database": "SQLite + SQLAlchemy ORM",
+        "Pembuatan Laporan": "fpdf2",
+        "Frontend": "HTML, CSS, JavaScript, Chart.js, Jinja2",
+        "Integrasi Honeypot": "Native SQLite Sync Service"
+      }
+    }
   }
 };
 
@@ -229,7 +283,7 @@ const ProjectModal = () => {
 
         {/* COL 1: Image (30%) */}
         <div className={`w-full md:w-[30%] border-b-4 md:border-b-0 md:border-r-4 border-black bg-gray-100 relative group flex flex-col items-center justify-center shrink-0 h-[40%] md:h-full overflow-hidden ${project.isMobile ? 'p-8 bg-gray-200' : ''}`}>
-             {project.title !== 'Network Traffic Analysis' && project.title !== 'QuickTurn' && project.title !== 'Rootine' && (
+             {project.title !== 'Network Traffic Analysis' && project.title !== 'QuickTurn' && project.title !== 'Rootine' && project.title !== 'DFIR Workbench' && (
                  <div className={`relative w-full overflow-hidden ${project.isMobile ? 'h-auto aspect-[9/19] rounded-[2rem] border-8 border-gray-900 shadow-xl bg-black' : 'h-full'}`}>
                      <div className={`absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/black-scales.png')] opacity-10 mix-blend-overlay z-10 pointer-events-none ${project.isMobile ? 'rounded-[1.5rem]' : ''}`}></div>
                      <picture>
@@ -464,6 +518,58 @@ const ProjectModal = () => {
                   <div className="absolute -top-10 -right-10 w-32 h-32 bg-green-100 rounded-full blur-2xl opacity-60 pointer-events-none animate-pulse"></div>
                   <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-orange-100 rounded-full blur-2xl opacity-50 pointer-events-none animate-pulse" style={{animationDelay: '1s'}}></div>
                   <div className="absolute top-1/2 -right-16 w-24 h-24 bg-green-50 rounded-full blur-xl opacity-40 pointer-events-none animate-pulse" style={{animationDelay: '0.5s'}}></div>
+             </div>
+        )}
+
+        {project.title === 'DFIR Workbench' && (
+             <div className="w-full h-full bg-gray-950 p-7 flex flex-col font-mono relative overflow-hidden text-left group overflow-y-auto no-scrollbar">
+                  <div className="absolute top-12 right-8 w-3 h-3 bg-cyan-400 rounded-full animate-bounce" style={{animationDelay: '0s', animationDuration: '2s'}}></div>
+                  <div className="absolute top-24 right-16 w-2 h-2 bg-red-400 rounded-full animate-bounce" style={{animationDelay: '0.5s', animationDuration: '2.5s'}}></div>
+                  <div className="absolute top-16 left-12 w-4 h-4 bg-green-300 rounded-full animate-ping" style={{animationDuration: '3s'}}></div>
+
+                  <div className="flex justify-between items-center mb-8 animate-in slide-in-from-top-4 fade-in duration-700">
+                    <div className="flex items-center gap-2">
+                         <div className="bg-cyan-400 p-1.5 rounded-lg text-black hover:scale-125 hover:rotate-12 hover:shadow-lg transition-all duration-300 cursor-pointer shadow-md animate-pulse" style={{animationDuration: '3s'}}>
+                            <Shield size={18} />
+                         </div>
+                      <span className="font-bold text-xl tracking-tight text-cyan-300 cursor-default hover:text-cyan-200 transition-colors">DFIR Workbench</span>
+                    </div>
+                    <Menu size={24} className="text-cyan-300 hover:rotate-180 hover:text-red-400 transition-all duration-700 cursor-pointer" />
+                  </div>
+
+                  <div className="flex-1 flex flex-col justify-center animate-in slide-in-from-bottom-8 fade-in duration-700 delay-150">
+                    <div className="mb-8">
+                      <div className="inline-flex items-center gap-2 bg-cyan-900/30 border border-cyan-500/30 px-3 py-1.5 rounded-full text-xs font-bold text-cyan-300 mb-6 w-fit hover:scale-110 hover:bg-cyan-900/50 hover:shadow-md transition-all shadow-sm animate-in zoom-in duration-500 delay-300">
+                        <span className="animate-pulse" style={{animationDuration: '1.5s'}}>🧪</span>
+                        NIST SP 800-61
+                      </div>
+
+                      <h1 className="text-5xl md:text-5xl font-black leading-[0.9] text-cyan-300 mb-6 tracking-tighter group-hover:translate-x-2 transition-transform duration-500 cursor-default">
+                        <span className="inline-block hover:text-white hover:-rotate-2 transition-all duration-300">Detect.</span><br />
+                        <span className="text-gray-500 group-hover:text-cyan-500 transition-colors duration-500">Investigate.<br />Report.</span>
+                      </h1>
+
+                      <p className="text-sm font-medium text-gray-400 leading-relaxed max-w-xs mb-8 animate-in fade-in slide-in-from-left-4 duration-700 delay-500">
+                        {language === 'en'
+                          ? <>A complete <em className="text-cyan-300 not-italic font-bold">DFIR</em> workflow platform from alert intake to timeline reconstruction and incident PDF generation.</>
+                          : <>Platform alur kerja <em className="text-cyan-300 not-italic font-bold">DFIR</em> lengkap dari deteksi alert, rekonstruksi timeline, hingga pembuatan laporan insiden PDF.</>
+                        }
+                      </p>
+                    </div>
+
+                    <div className="space-y-3 z-30 relative">
+                      <a href="https://github.com/SamuelKaunang/DFIR-Workpanel" target="_blank" className="w-full py-4 bg-cyan-400 text-black rounded-xl font-bold flex items-center justify-center gap-2 hover:bg-cyan-300 hover:-translate-y-2 hover:shadow-xl active:scale-95 transition-all shadow-lg shadow-cyan-900 hover:shadow-cyan-700 text-lg group/btn">
+                        <span className="group-hover/btn:tracking-wider transition-all">{language === 'en' ? 'View on GitHub' : 'Lihat di GitHub'}</span>
+                        <ArrowRight size={20} className="group-hover/btn:translate-x-2 group-hover/btn:scale-110 transition-all" />
+                      </a>
+                      <button className="w-full py-4 bg-gray-900 text-cyan-300 border-2 border-gray-700 rounded-xl font-bold hover:bg-gray-800 hover:border-cyan-500 hover:-translate-y-1 active:scale-95 transition-all text-lg hover:shadow-md">
+                        {language === 'en' ? 'Open Dashboard Flow' : 'Lihat Alur Dashboard'}
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-cyan-900 rounded-full blur-3xl opacity-30 pointer-events-none animate-pulse"></div>
+                  <div className="absolute -top-32 -left-32 w-48 h-48 bg-cyan-950 rounded-full blur-2xl opacity-40 pointer-events-none animate-pulse" style={{animationDelay: '1s'}}></div>
              </div>
         )}
         </div>
